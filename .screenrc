@@ -1,0 +1,23 @@
+# Jim Wang
+# jim.gs.wang@gmail.com
+
+startup_message off
+defscrollback 5000
+
+# Split screen into 3 
+# typically for editor / repl / terminal
+screen  
+split -v
+focus
+screen
+screen
+split
+focus
+screen 
+select 0
+
+
+# Display status at the bottom
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "

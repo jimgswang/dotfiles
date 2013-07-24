@@ -6,7 +6,6 @@ defscrollback 5000
 
 # Split screen into 3 
 # typically for editor / repl / terminal
-layout three
 screen  
 split -v
 focus
@@ -14,7 +13,7 @@ screen
 split
 focus
 screen 
-
+layout save default
 
 
 # Display status at the bottom

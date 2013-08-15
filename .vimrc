@@ -14,3 +14,6 @@ set virtualedit=block
 set background=dark
 set showcmd
 set hlsearch
+
+set nu
+set so:5  " 5 line buffer on top/bottom of screen

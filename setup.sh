@@ -14,6 +14,9 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
 cd ~/.vim/bundle
 git clone git://github.com/jpalardy/vim-slime.git
 
+# Install jshint2
+git clone git://github.com/Shutnik/jshint2.vim.git
+
 # Install rlwrap
 sudo apt-get install -y rlwrap
 
@@ -22,3 +25,4 @@ cd $HOME
 ln -sb dev-env/.screenrc .
 ln -sb dev-env/.bashrc .
 ln -sb dev-env/.vimrc .
+ln -sb dev-env/.jshintrc .

@@ -16,4 +16,7 @@ set showcmd
 set hlsearch
 
 set nu
-set so:5  " 5 line buffer on top/bottom of screen
+set so:5  " 5 line buffer on top/bottom of screen "
+
+nmap j gj
+nmap k gk

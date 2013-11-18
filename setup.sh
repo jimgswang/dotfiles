@@ -25,5 +25,6 @@ cd $HOME
 ln -sb dev-env/.bashrc .
 ln -sb dev-env/.bash_ind .
 ln -sb dev-env/.screenrc .
+ln -sb dev-env/.tmux.conf .
 ln -sb dev-env/.vimrc .
 ln -sb dev-env/.jshintrc .

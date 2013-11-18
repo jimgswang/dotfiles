@@ -20,3 +20,7 @@ set so:5  " 5 line buffer on top/bottom of screen "
 
 nmap j gj
 nmap k gk
+
+" vim-slime "
+
+let g:slime_target = "tmux"

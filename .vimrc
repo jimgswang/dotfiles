@@ -21,6 +21,18 @@ set so:5  " 5 line buffer on top/bottom of screen "
 nmap j gj
 nmap k gk
 
+" Split navigation "
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Split panes right and bottom "
+
+set splitright
+set splitbelow
+
 " vim-slime "
 
 let g:slime_target = "tmux"

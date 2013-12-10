@@ -2,11 +2,14 @@
 # Jim Wang
 # jim.gs.wang@gmail.com
 
-# Install GNU Screen
-sudo apt-get install -y screen
+# Install tmux
+sudo apt-get install -y tmux
+
+# Install curl
+sudo apt-get install -y curl
 
 # Install Vim Pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
@@ -23,7 +26,6 @@ sudo apt-get install -y rlwrap
 # symlink the included dotfiles
 cd $HOME
 ln -sb dev-env/.bashrc .
-ln -sb dev-env/.bash_ind .
 ln -sb dev-env/.screenrc .
 ln -sb dev-env/.tmux.conf .
 ln -sb dev-env/.vimrc .

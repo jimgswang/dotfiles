@@ -41,3 +41,8 @@ autocmd vimenter * NERDTree
 
 " close vim if NERDTree is hte only pane "
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endi
+
+let mapleader=","
+set showcmd "show leader key at bottom corner " 
+
+noremap <Leader>n :NERDTree

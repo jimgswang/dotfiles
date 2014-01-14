@@ -8,6 +8,8 @@ sudo apt-get install -y tmux
 # Install curl
 sudo apt-get install -y curl
 
+sudo apt-get install -y vim-nox
+
 # Install Vim Pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -Sso ~/.vim/autoload/pathogen.vim \

@@ -35,3 +35,9 @@ set splitbelow
 
 " vim-slime "
 let g:slime_target = "tmux"
+
+" run NERDTREE on vim startup"
+autocmd vimenter * NERDTree
+
+" close vim if NERDTree is hte only pane "
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endi

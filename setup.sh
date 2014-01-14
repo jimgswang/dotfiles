@@ -13,9 +13,14 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-# Install vim-slime
+# Vim plugins
 cd ~/.vim/bundle
+
+# Install vim-slime
 git clone git://github.com/jpalardy/vim-slime.git
+
+# Install NERDtree
+git clone https://github.com/scrooloose/nerdtree.git
 
 # Install jshint2
 git clone git://github.com/Shutnik/jshint2.vim.git

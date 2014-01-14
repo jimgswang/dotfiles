@@ -27,6 +27,8 @@ git clone https://github.com/scrooloose/nerdtree.git
 # Install jshint2
 git clone git://github.com/Shutnik/jshint2.vim.git
 
+# Install LustyJuggler 
+git clone git://github.com/vim-scripts/LustyJuggler.git
 # Install rlwrap
 sudo apt-get install -y rlwrap
 

@@ -47,3 +47,6 @@ noremap <Leader>n :NERDTree<CR>
 " LustyJuggler "
 let g:LustyJugglerDefaultMappings = 0
 noremap <Leader>j :LustyJuggler<CR>
+
+" Set current working directory to the dir of the current file "
+autocmd BufEnter * silent! lcd %:p:h"

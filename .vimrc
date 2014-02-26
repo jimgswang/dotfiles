@@ -36,7 +36,7 @@ set splitbelow
 " vim-slime "
 let g:slime_target = "tmux"
 
-" close vim if NERDTree is hte only pane "
+" close vim if NERDTree is the only pane "
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endi
 
 let mapleader=","

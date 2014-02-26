@@ -50,3 +50,6 @@ noremap <Leader>j :LustyJuggler<CR>
 
 " Set current working directory to the dir of the current file "
 autocmd BufEnter * silent! lcd %:p:h"
+
+" Remoove highlight of current search "
+noremap <leader>hi :noh<CR>

@@ -7,7 +7,7 @@ filetype plugin indent on
 
 set expandtab          
 set softtabstop=4
-set smartindent
+set nocindent smartindent
 set shiftwidth=4
 
 set virtualedit=block

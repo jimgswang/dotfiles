@@ -51,5 +51,8 @@ noremap <Leader>j :LustyJuggler<CR>
 " Set current working directory to the dir of the current file "
 autocmd BufEnter * silent! lcd %:p:h"
 
-" Remoove highlight of current search "
+" Remove highlight of current search "
 noremap <leader>hi :noh<CR>
+
+" Move text after cursor onto new line. Like reverse J "
+noremap <leader>J i<CR><ESC>

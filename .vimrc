@@ -10,6 +10,9 @@ set softtabstop=4
 set nocindent smartindent
 set shiftwidth=4
 
+" Set tabs to 2 spaces for js "
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+
 set virtualedit=block
 set background=dark
 set showcmd

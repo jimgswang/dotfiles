@@ -39,3 +39,4 @@ ln -sb dev-env/.screenrc .
 ln -sb dev-env/.tmux.conf .
 ln -sb dev-env/.vimrc .
 ln -sb dev-env/.jshintrc .
+ln -sb dev-env/.gitconfig .

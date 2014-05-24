@@ -5,6 +5,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Tabs "
 set expandtab          
 set softtabstop=4
 set nocindent smartindent
@@ -15,6 +16,9 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 set virtualedit=block
 set background=dark
+set t_Co=256
+color mango
+
 set showcmd
 set hlsearch  " highlight search
 
@@ -23,6 +27,13 @@ set so:5  " 5 line buffer on top/bottom of screen "
 
 nmap j gj
 nmap k gk
+
+" Show hidden characters "
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+
+set title
+set ruler
 
 " Split navigation "
 

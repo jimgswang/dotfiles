@@ -3,7 +3,7 @@
 # jim.gs.wang@gmail.com
 
 # Install tmux
-sudo apt-get install -y tmux
+# sudo apt-get install -y tmux
 
 # Install curl
 sudo apt-get install -y curl
@@ -40,6 +40,8 @@ git clone git://github.com/vim-scripts/LustyJuggler.git
 # Install syntastic
 git clone https://github.com/scrooloose/syntastic.git
 
+# Install vim-tmux-navigator
+git clone https://github.com/christoomey/vim-tmux-navigator.git
 
 ### JavaScript plugins ###
 
@@ -55,6 +57,7 @@ npm install -g jshint
 # symlink the included dotfiles
 cd $HOME
 ln -sb dev-env/.bashrc .
+ln -sb dev-env/.bash_aliases .
 ln -sb dev-env/.screenrc .
 ln -sb dev-env/.tmux.conf .
 ln -sb dev-env/.vimrc .

@@ -56,10 +56,10 @@ npm install -g jshint
 
 # symlink the included dotfiles
 cd $HOME
-ln -sb dev-env/.bashrc .
-ln -sb dev-env/.bash_aliases .
-ln -sb dev-env/.screenrc .
-ln -sb dev-env/.tmux.conf .
-ln -sb dev-env/.vimrc .
-ln -sb dev-env/.jshintrc .
-ln -sb dev-env/.gitconfig .
+ln -sb devenv/.bashrc .
+ln -sb devenv/.bash_aliases .
+ln -sb devenv/.screenrc .
+ln -sb devenv/.tmux.conf .
+ln -sb devenv/.vimrc .
+ln -sb devenv/.jshintrc .
+ln -sb devenv/.gitconfig .

@@ -71,5 +71,32 @@ noremap <leader>hi :noh<CR>
 " Move text after cursor onto new line. Like reverse J "
 noremap <leader>J i<CR><ESC>
 
+" Vim Fugitive mappings "
+
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gl :Glog<CR>
+noremap <leader>gp :Gpush<CR>
+
+" cntrlp mappings "
+
+noremap <leader>f :CtrlP <CR>
+noremap <leader>v :CtrlPBuffer<CR>
+
+set wildignore+=*/dist/**
+set wildignore+=*/node_modules/**
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Tabular"
+noremap <leader>a= :Tabularize /=<CR>
+noremap <leader>a: :Tabularize /:<CR>
+noremap <leader>a:: :Tabularize /:\zs<CR>
+noremap <leader>a, :Tabularize /,<CR>
+noremap <leader>a<Bar> :Tabularize /<CR>
+
+
 " html completion "
 :iabbrev </ </<C-X><C-O>

@@ -43,6 +43,22 @@ git clone https://github.com/scrooloose/syntastic.git
 # Install vim-tmux-navigator
 git clone https://github.com/christoomey/vim-tmux-navigator.git
 
+# Install nerdcommenter
+git clone https://github.com/scrooloose/nerdcommenter.git
+
+# Install autopairs 
+git clone https://github.com/jiangmiao/auto-pairs.git
+
+# Install vim-fugitive
+git clone git://github.com/tpope/vim-fugitive.git
+
+# Install cntrlp
+git clone https://github.com/kien/ctrlp.vim.git
+
+# Install tabular
+git clone git://github.com/godlygeek/tabular.git
+
+
 ### HTML plugins ###
 
 #Install HTML5.vim

@@ -70,3 +70,6 @@ noremap <leader>hi :noh<CR>
 
 " Move text after cursor onto new line. Like reverse J "
 noremap <leader>J i<CR><ESC>
+
+" html completion "
+:iabbrev </ </<C-X><C-O>

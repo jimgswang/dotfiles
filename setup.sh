@@ -43,6 +43,11 @@ git clone https://github.com/scrooloose/syntastic.git
 # Install vim-tmux-navigator
 git clone https://github.com/christoomey/vim-tmux-navigator.git
 
+### HTML plugins ###
+
+#Install HTML5.vim
+git clone https://github.com/othree/html5.vim.git
+
 ### JavaScript plugins ###
 
 # Install vim-javascript

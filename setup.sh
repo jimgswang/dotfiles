@@ -6,19 +6,18 @@
 # sudo apt-get install -y tmux
 
 # Install curl
-sudo apt-get install -y curl
+#sudo apt-get install -y curl
 
 # Install rlwrap
-sudo apt-get install -y rlwrap
+#sudo apt-get install -y rlwrap
 
-sudo apt-get install -y vim-nox
+#sudo apt-get install -y vim-nox
 
 # Install Vim Pathogen
-rm -rf ~/.vim/bundle
-
-mkdir -p ~/.vim/autoload ~/.vim/bundle 
-curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+#rm -rf ~/.vim/
+#
+#mkdir -p ~/.vim/autoload ~/.vim/bundle 
+#curl -LSso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim¬
 
 # Vim plugins
 cd ~/.vim/bundle
@@ -53,18 +52,21 @@ git clone https://github.com/othree/html5.vim.git
 # Install vim-javascript
 git clone https://github.com/pangloss/vim-javascript.git
 
+#Install git-gutter
+git clone git://github.com/airblade/vim-gitgutter.git
+
 # Install mango colorscheme
 git clone https://github.com/jimgswang/mango.vim.git
 
 # Install jshint
-npm install -g jshint
+#npm install -g jshint
 
 # symlink the included dotfiles
 cd $HOME
-ln -sb devenv/.bashrc .
-ln -sb devenv/.bash_aliases .
-ln -sb devenv/.screenrc .
-ln -sb devenv/.tmux.conf .
-ln -sb devenv/.vimrc .
-ln -sb devenv/.jshintrc .
-ln -sb devenv/.gitconfig .
+ln -s devenv/.bashrc .
+ln -s devenv/.bash_aliases .
+ln -s devenv/.screenrc .
+ln -s devenv/.tmux.conf .
+ln -s devenv/.vimrc .
+ln -s devenv/.jshintrc .
+ln -s devenv/.gitconfig .

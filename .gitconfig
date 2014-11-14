@@ -4,6 +4,12 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     st = status
     unstage = reset HEAD
+    dev = push dev dev:master
+    staging = push staging staging:master
+    prod = push production master:master
+
 [user]
 	name = Jim Wang
 	email = jim.gs.wang@gmail.com
+[push]
+	default = simple

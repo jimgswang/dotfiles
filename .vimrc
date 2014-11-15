@@ -93,11 +93,11 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Tabular"
-noremap <leader>a= :Tabularize /=
-noremap <leader>a: :Tabularize /:
-noremap <leader>a:: :Tabularize /:\zs
-noremap <leader>a, :Tabularize /,
-noremap <leader>a<Bar> :Tabularize /
+noremap <leader>a= :Tabularize /=<CR>
+noremap <leader>a: :Tabularize /:<CR>
+noremap <leader>a:: :Tabularize /:\zs<CR>
+noremap <leader>a, :Tabularize /,<CR>
+noremap <leader>a<Bar> :Tabularize /<CR>
 
 " html completion "
 :iabbrev </ </<C-X><C-O>

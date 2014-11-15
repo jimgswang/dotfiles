@@ -21,6 +21,7 @@ color mango
 
 set showcmd
 set hlsearch  " highlight search
+set incsearch
 
 set nu
 set so:5  " 5 line buffer on top/bottom of screen "
@@ -54,7 +55,7 @@ let g:slime_target = "tmux"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endi
 
 let mapleader=","
-set showcmd "show leader key at bottom corner " 
+set showcmd "show leader key at bottom corner "
 
 noremap <Leader>n :NERDTree<CR>
 
@@ -73,11 +74,22 @@ noremap <leader>J i<CR><ESC>
 
 " Vim Fugitive mappings "
 
-noremap <leader>gs :Gstatus
-noremap <leader>gd :Gdiff
-noremap <leader>gb :Gblame
-noremap <leader>gl :Glog
-noremap <leader>gp :Gpush
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gd :Gdiff<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gl :Glog<CR>
+noremap <leader>gp :Gpush<CR>
+
+" cntrlp mappings "
+            
+noremap <leader>f :CtrlP <CR>
+noremap <leader>v :CtrlPBuffer<CR>
+
+set wildignore+=*/dist/**
+set wildignore+=*/node_modules/**
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " html completion "
 :iabbrev </ </<C-X><C-O>

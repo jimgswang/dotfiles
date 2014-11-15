@@ -51,6 +51,9 @@ git clone https://github.com/jiangmiao/auto-pairs.git
 # Install vim-fugitive
 git clone git://github.com/tpope/vim-fugitive.git
 
+# Install cntrlp
+git clone https://github.com/kien/ctrlp.vim.git
+
 ### HTML plugins ###
 
 #Install HTML5.vim

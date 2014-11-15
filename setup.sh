@@ -48,6 +48,9 @@ git clone https://github.com/scrooloose/nerdcommenter.git
 # Install autopairs 
 git clone https://github.com/jiangmiao/auto-pairs.git
 
+# Install vim-fugitive
+git clone git://github.com/tpope/vim-fugitive.git
+
 ### HTML plugins ###
 
 #Install HTML5.vim

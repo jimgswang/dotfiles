@@ -22,6 +22,7 @@ color mango
 set showcmd
 set hlsearch  " highlight search
 set incsearch
+hi Search cterm=bold,underline ctermfg=Yellow ctermbg=NONE
 
 set nu
 set so:5  " 5 line buffer on top/bottom of screen "

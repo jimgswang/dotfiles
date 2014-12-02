@@ -58,6 +58,11 @@ git clone https://github.com/kien/ctrlp.vim.git
 # Install tabular
 git clone git://github.com/godlygeek/tabular.git
 
+# Install surround.vim
+git clone git://github.com/tpope/vim-surround.git
+
+# Install vim-repeat
+git clone git://github.com/tpope/vim-repeat.git
 
 ### HTML plugins ###
 

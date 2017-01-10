@@ -1,0 +1,65 @@
+conky.config = {
+    alignment = 'top_left',
+    maximum_width = 1366,
+    minimum_width = 384,
+    gap_x = 0,
+    gap_y = 0,
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+
+    own_window = true,
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_type = 'desktop',
+    own_window_class = 'Conky',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+
+    short_units = true,
+    format_human_readable = false,
+    times_in_seconds = false,
+    update_interval = 1,
+    use_spacer = 'none',
+    net_avg_samples = 1,
+    cpu_avg_samples = 1,
+    top_cpu_separate = false,
+
+    use_xft = true,
+    override_utf8_locale = true,
+
+    draw_shades = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+
+    default_bar_width = 50,
+    default_bar_height = 6,
+    default_graph_width = 60,
+    default_graph_height = 35,
+
+    own_window_colour = '000000',
+    default_color = 'bbbbbb',
+    default_shade_color = '111111',
+    color0 = 'ffffff',
+    color1 = '666666',
+    color2 = '1793d0',
+
+}
+
+conky.text = [[
+    ${voffset 90}
+    ${color lightgrey}${alignc}${font space age:size=36}${time %d}. ${time %B}
+    ${alignc}${time %A}
+    ${alignc}${time %R}${font}${color}
+    ${voffset 46}${alignc}${font neuropolitical}CPU: ${cpu} %
+    ${alignc}${color 222222}${cpubar 22,150}${color}
+    ${voffset 10}${alignc}RAM: ${memperc} %
+    ${alignc}${color 222222}${membar 22,150}${color}
+    ${voffset 18}${alignc}NETWORK:
+    ${alignc}-------------------
+    Down: ${alignr}Up:
+    $color ${downspeed wlp3s0} ${alignr}$color ${upspeed wlp3s0}
+    ${color 222222}${downspeedgraph wlp3s0 22,150}${color} ${alignr}${color 222222}${upspeedgraph wlp3s0 22,150}
+
+
+]];

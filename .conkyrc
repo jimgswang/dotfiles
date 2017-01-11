@@ -55,8 +55,16 @@ conky.text = [[
     ${alignc}${color 222222}${cpubar 22,150}${color}
     ${voffset 10}${alignc}RAM: ${memperc} %
     ${alignc}${color 222222}${membar 22,150}${color}
+    ${voffset 18}${alignc}TEMPERATURES:
+    ${alignc}------------------------
+    GPU: ${alignr} ${execi 60 nvidia-smi -q -g 0 2>&1 | grep -A 2 -i Temperature | grep -i Current | tail -1 | awk '{print $5}'}.0 °C
+    CPU 0: ${alignr}  ${execi 60 sensors | grep 'Core 0' | cut -c 18-21} °C
+    CPU 1: ${alignr}  ${execi 60 sensors | grep 'Core 1' | cut -c 18-21} °C
+    CPU 2: ${alignr}  ${execi 60 sensors | grep 'Core 2' | cut -c 18-21} °C
+    CPU 3: ${alignr}  ${execi 60 sensors | grep 'Core 3' | cut -c 18-21} °C
     ${voffset 18}${alignc}NETWORK:
     ${alignc}-------------------
+
     Down: ${alignr}Up:
     $color ${downspeed wlp3s0} ${alignr}$color ${upspeed wlp3s0}
     ${color 222222}${downspeedgraph wlp3s0 22,150}${color} ${alignr}${color 222222}${upspeedgraph wlp3s0 22,150}

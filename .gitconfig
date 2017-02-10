@@ -7,3 +7,7 @@
 [user]
 	name = Jim Wang
 	email = jim.gs.wang@gmail.com
+[push]
+	default = simple
+[core]
+	pager = less -erX

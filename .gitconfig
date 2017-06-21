@@ -1,4 +1,5 @@
 [alias]
+    la = config --get-regexp alias
     pr = pull --rebase
     co = checkout
     cm = commit -m
@@ -9,7 +10,7 @@
     re = rebase
     cp = cherry-pick
     br = branch
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -50
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -30
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
 [user]

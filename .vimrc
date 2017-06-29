@@ -108,28 +108,28 @@ noremap <leader>x :lopen<CR>
 noremap <leader>f :CtrlP <CR>
 noremap <leader>e :CtrlPBuffer<CR>
 
-let g:syntastic_javascript_checkers=['eslint']
-
 set wildignore+=*/dist/**
 set wildignore+=*/node_modules/**
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_root_markers = ['.ctrlp']
-
 
 " Syntastic Settings "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_root_markers = ['.ctrlp']
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_javascript_checkers=['eslint']
+
 let g:airline_theme='bubblegum'
 
 let tern#is_show_argument_hints_enabled = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 "
 " html completion "

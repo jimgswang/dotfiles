@@ -129,6 +129,8 @@ let g:syntastic_check_on_wq = 0
 
 let g:airline_theme='bubblegum'
 
+let tern#is_show_argument_hints_enabled = 1
+
 "
 " html completion "
 :iabbrev </ </<C-X><C-O>

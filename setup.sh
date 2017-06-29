@@ -13,72 +13,13 @@ sudo apt-get install -y rlwrap
 
 sudo apt-get install -y vim-nox
 
-# Install Vim Pathogen
-rm -rf ~/.vim/bundle
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle 
-curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Vim plugins
-cd ~/.vim/bundle
 
-### General plugins ###
-
-# Install vim-indent-guides
-git clone git://github.com/nathanaelkane/vim-indent-guides.git
-
-# Install vim-slime
-git clone git://github.com/jpalardy/vim-slime.git
-
-# Install NERDtree
-git clone https://github.com/scrooloose/nerdtree.git
-
-# Install LustyJuggler 
-git clone git://github.com/vim-scripts/LustyJuggler.git
-
-# Install syntastic
-git clone https://github.com/scrooloose/syntastic.git
-
-# Install vim-tmux-navigator
-git clone https://github.com/christoomey/vim-tmux-navigator.git
-
-# Install nerdcommenter
-git clone https://github.com/scrooloose/nerdcommenter.git
-
-# Install autopairs 
-git clone https://github.com/jiangmiao/auto-pairs.git
-
-# Install vim-fugitive
-git clone git://github.com/tpope/vim-fugitive.git
-
-# Install cntrlp
-git clone https://github.com/kien/ctrlp.vim.git
-
-# Install tabular
-git clone git://github.com/godlygeek/tabular.git
-
-# Install surround.vim
-git clone git://github.com/tpope/vim-surround.git
-
-# Install vim-repeat
-git clone git://github.com/tpope/vim-repeat.git
-
-### HTML plugins ###
-
-#Install HTML5.vim
-git clone https://github.com/othree/html5.vim.git
-
-### JavaScript plugins ###
-
-# Install vim-javascript
-git clone https://github.com/pangloss/vim-javascript.git
-
-# Install mango colorscheme
-git clone https://github.com/jimgswang/mango.vim.git
-
-# Install jshint
-npm install -g jshint
+# Install eslint
+npm install -g eslint
 
 # symlink the included dotfiles
 cd $HOME

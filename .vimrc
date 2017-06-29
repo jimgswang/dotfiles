@@ -1,7 +1,3 @@
-" Jim Wang "
-" jim.gs.wang@gmail.com "
-
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -11,13 +7,14 @@ set softtabstop=4
 set nocindent smartindent
 set shiftwidth=4
 
-" Set tabs to 2 spaces for js "
+" airline
+set laststatus=2
+
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 set virtualedit=block
 set background=dark
 set t_Co=256
-color mango
 
 set showcmd
 set hlsearch  " highlight search
@@ -35,26 +32,54 @@ set list
 set title
 set ruler
 
-" Split navigation "
-
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Split panes right and bottom "
-
 set splitright
 set splitbelow
 
-" vim-slime "
 let g:slime_target = "tmux"
 
-" close vim if NERDTree is the only pane "
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endi
 
-let mapleader=","
+" let mapleader=" "
+map <space> <leader>
 set showcmd "show leader key at bottom corner " 
+
+
+" Install plugins ""
+call plug#begin('~/.vim/plugged')
+
+Plug 'jimgswang/mango.vim'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/LustyJuggler'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easysid/mod8.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'Valloric/YouCompleteMe'
+Plug 'ternjs/tern_for_vim'
+
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
+
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'moll/vim-node'
+
+Plug 'othree/html5.vim'
+
+call plug#end()
 
 noremap <Leader>n :NERDTree<CR>
 
@@ -66,10 +91,7 @@ noremap <Leader>j :LustyJuggler<CR>
 autocmd BufEnter * silent! lcd %:p:h"
 
 " Remove highlight of current search "
-noremap <leader>hi :noh<CR>
-
-" Move text after cursor onto new line. Like reverse J "
-noremap <leader>J i<CR><ESC>
+noremap <leader>h :noh<CR>
 
 " Vim Fugitive mappings "
 
@@ -79,10 +101,14 @@ noremap <leader>gb :Gblame<CR>
 noremap <leader>gl :Glog<CR>
 noremap <leader>gp :Gpush<CR>
 
+noremap <leader>x :lopen<CR>
+
 " cntrlp mappings "
 
 noremap <leader>f :CtrlP <CR>
-noremap <leader>v :CtrlPBuffer<CR>
+noremap <leader>e :CtrlPBuffer<CR>
+
+let g:syntastic_javascript_checkers=['eslint']
 
 set wildignore+=*/dist/**
 set wildignore+=*/node_modules/**
@@ -91,13 +117,20 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
 
-" Tabular"
-noremap <leader>a= :Tabularize /=<CR>
-noremap <leader>a: :Tabularize /:<CR>
-noremap <leader>a:: :Tabularize /:\zs<CR>
-noremap <leader>a, :Tabularize /,<CR>
-noremap <leader>a<Bar> :Tabularize /<CR>
 
+" Syntastic Settings "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:airline_theme='bubblegum'
+
+"
 " html completion "
 :iabbrev </ </<C-X><C-O>
+
+colorscheme mango

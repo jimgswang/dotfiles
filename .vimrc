@@ -82,6 +82,8 @@ Plug 'jimgswang/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'valloric/MatchTagAlways'
 
 "Plug 'othree/html5.vim'
 "
@@ -153,6 +155,15 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:tmuxline_powerline_separators = 0
 
 let g:jsx_ext_required = 0
+
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'js' : 1,
+    \ 'javascript.jsx' : 1,
+    \}
 
 autocmd QuickFixCmdPost *grep* cwindow
 "

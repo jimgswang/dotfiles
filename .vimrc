@@ -22,6 +22,11 @@ set hlsearch  " highlight search
 set nu
 set so:5  " 5 line buffer on top/bottom of screen "
 
+" Persistent undo
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
 nmap j gj
 nmap k gk
 
@@ -52,7 +57,6 @@ set showcmd "show leader key at bottom corner "
 " Install plugins ""
 call plug#begin('~/.vim/plugged')
 
-Plug 'jimgswang/mango.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -63,25 +67,34 @@ Plug 'tpope/vim-repeat'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/LustyJuggler'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'easysid/mod8.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ternjs/tern_for_vim'
+Plug 'rking/ag.vim'
+Plug 'Chun-Yang/vim-action-ag'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
+Plug 'vim-scripts/SyntaxAttr.vim'
 
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'jimgswang/vim-javascript'
+Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
+Plug 'mxw/vim-jsx'
 
-Plug 'othree/html5.vim'
+"Plug 'othree/html5.vim'
+"
+"
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'jimgswang/mango.vim'
 
 call plug#end()
 
-noremap <Leader>n :NERDTree<CR>
+noremap <Leader>n :NERDTreeFocus<CR>
 
 " LustyJuggler "
 let g:LustyJugglerDefaultMappings = 0
@@ -102,6 +115,8 @@ noremap <leader>gl :Glog<CR>
 noremap <leader>gp :Gpush<CR>
 
 noremap <leader>x :lopen<CR>
+
+noremap <leader>sy :call SyntaxAttr()<CR>
 
 " cntrlp mappings "
 
@@ -128,11 +143,27 @@ let g:syntastic_javascript_checkers=['eslint']
 
 let g:airline_theme='bubblegum'
 
+let g:javascript_plugin_jsdoc = 1
+
 let tern#is_show_argument_hints_enabled = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+let g:tmuxline_powerline_separators = 0
+
+let g:jsx_ext_required = 0
+
+autocmd QuickFixCmdPost *grep* cwindow
 "
 " html completion "
 :iabbrev </ </<C-X><C-O>
 
 colorscheme mango
+match Label /[A-Z]\{2,\}/ 
+
+set tags=tags;
+
+" Clipboard
+set clipboard=unnamedplus
+vnoremap <C-c> "+y

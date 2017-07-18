@@ -3,6 +3,7 @@
     pr = pull --rebase
     co = checkout
     cm = commit -m
+    cmfix = commit --amend --no-edit
     st = status
     ri = rebase --interactive
     ra = rebase --abort
@@ -11,9 +12,10 @@
     cp = cherry-pick
     br = branch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -30
+    d = diff
+    dt = difftool
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
-    cmfix = commit --amend --no-edit
 [user]
 	name = Jim Wang
 	email = jim.gs.wang@gmail.com
@@ -23,3 +25,5 @@
 	pager = less -erX
 [color]
 	ui = auto
+[diff]
+	tool = meld

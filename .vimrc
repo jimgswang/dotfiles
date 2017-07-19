@@ -84,6 +84,7 @@ Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'valloric/MatchTagAlways'
+Plug 'alvan/vim-closetag'
 
 "Plug 'othree/html5.vim'
 "
@@ -164,6 +165,8 @@ let g:mta_filetypes = {
     \ 'js' : 1,
     \ 'javascript.jsx' : 1,
     \}
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 
 autocmd QuickFixCmdPost *grep* cwindow
 "

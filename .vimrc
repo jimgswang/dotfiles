@@ -181,3 +181,6 @@ set tags=tags;
 " Clipboard
 set clipboard=unnamedplus
 vnoremap <C-c> "+y
+
+ca Ag Ag!
+ca Ags Ag! -Q

@@ -20,6 +20,7 @@ set showcmd
 set hlsearch  " highlight search
 
 set nu
+set relativenumber
 set so:5  " 5 line buffer on top/bottom of screen "
 
 " Persistent undo
@@ -29,10 +30,15 @@ set undofile
 
 nmap j gj
 nmap k gk
+nnoremap 0 ^
+nnoremap ^ 0
+vnoremap 0 ^
+vnoremap ^ 0
+onoremap 0 ^
+onoremap ^ 0
 
 " Show hidden characters "
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
 
 set title
 set ruler
@@ -64,15 +70,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/LustyJuggler'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'easysid/mod8.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ternjs/tern_for_vim'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
+Plug 'godlygeek/tabular'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
@@ -82,6 +88,7 @@ Plug 'jimgswang/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
@@ -94,6 +101,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jimgswang/mango.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -156,6 +165,8 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:tmuxline_powerline_separators = 0
 
 let g:jsx_ext_required = 0
+
+let g:ag_working_path_mode = 'r'
 
 let g:mta_filetypes = {
     \ 'html' : 1,

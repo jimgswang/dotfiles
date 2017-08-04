@@ -30,12 +30,16 @@ set undofile
 
 nmap j gj
 nmap k gk
+"swap 0 and ^
 nnoremap 0 ^
 nnoremap ^ 0
 vnoremap 0 ^
 vnoremap ^ 0
 onoremap 0 ^
 onoremap ^ 0
+" Maintain visual mode after shifting
+vmap < <gv
+vmap > >gv
 
 " Show hidden characters "
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
@@ -63,6 +67,7 @@ set showcmd "show leader key at bottom corner "
 " Install plugins ""
 call plug#begin('~/.vim/plugged')
 
+" General
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -72,37 +77,42 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/LustyJuggler'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'w0ng/vim-hybrid'
 Plug 'Valloric/YouCompleteMe'
-Plug 'ternjs/tern_for_vim'
 Plug 'rking/ag.vim'
 Plug 'Chun-Yang/vim-action-ag'
 Plug 'godlygeek/tabular'
-
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
+Plug 'valloric/MatchTagAlways'
+Plug 'alvan/vim-closetag'
+
+" Util
 Plug 'vim-scripts/SyntaxAttr.vim'
 
+" JS/JSX
+Plug 'ternjs/tern_for_vim'
 Plug 'jimgswang/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vim-js-pretty-template'
-Plug 'valloric/MatchTagAlways'
-Plug 'alvan/vim-closetag'
 
 "Plug 'othree/html5.vim'
-"
-"
+
+" UI
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'Yggdroot/indentline'
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" Themes / Colors
 Plug 'jimgswang/mango.vim'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'flazz/vim-colorschemes'
+Plug 'romainl/apprentice'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
@@ -178,6 +188,9 @@ let g:mta_filetypes = {
     \}
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+
+" Yggdroot/indentline
+let g:indentLine_char = '│'
 
 autocmd QuickFixCmdPost *grep* cwindow
 "

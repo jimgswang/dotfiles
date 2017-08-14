@@ -73,6 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -85,7 +86,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 Plug 'valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
-Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Util
 Plug 'vim-scripts/SyntaxAttr.vim'
@@ -116,6 +118,8 @@ Plug 'romainl/apprentice'
 Plug 'w0ng/vim-hybrid'
 
 call plug#end()
+
+call yankstack#setup()
 
 noremap <Leader>n :NERDTreeFocus<CR>
 
@@ -192,6 +196,10 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 
 " Yggdroot/indentline
 let g:indentLine_char = '│'
+
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 autocmd QuickFixCmdPost *grep* cwindow
 "

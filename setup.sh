@@ -11,7 +11,7 @@ sudo apt-get install -y curl
 # Install rlwrap
 sudo apt-get install -y rlwrap
 
-sudo apt-get install -y vim-nox
+sudo apt-get install -y vim-gtk
 
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

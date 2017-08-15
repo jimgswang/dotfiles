@@ -17,7 +17,6 @@ sudo apt-get install -y vim-nox
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-
 # Install eslint
 npm install -g eslint
 
@@ -30,3 +29,5 @@ ln -sb devenv/.tmux.conf .
 ln -sb devenv/.vimrc .
 ln -sb devenv/.jshintrc .
 ln -sb devenv/.gitconfig .
+ln -sb devenv/.ideavimrc .
+ln -sb devenv/.zshrc .

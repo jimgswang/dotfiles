@@ -73,6 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'unblevable/quick-scope'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -87,7 +88,8 @@ Plug 'jpalardy/vim-slime'
 Plug 'valloric/MatchTagAlways'
 Plug 'alvan/vim-closetag'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'jimgswang/vim-snippets'
+Plug 'jimgswang/jsnippets'
 
 " Util
 Plug 'vim-scripts/SyntaxAttr.vim'
@@ -100,6 +102,7 @@ Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vim-js-pretty-template'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 
 "Plug 'othree/html5.vim'
 
@@ -119,7 +122,8 @@ Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
-call yankstack#setup()
+" conflicts with quickscope
+"call yankstack#setup()
 
 noremap <Leader>n :NERDTreeFocus<CR>
 
@@ -165,8 +169,11 @@ let g:ctrlp_root_markers = ['.ctrlp']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
 
 let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_debug= 3
 
 let g:airline_theme='bubblegum'
 
@@ -183,6 +190,9 @@ let g:jsx_ext_required = 0
 
 let g:ag_working_path_mode = 'r'
 
+" Quickscope on f, F, t, T
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'xhtml' : 1,
@@ -198,15 +208,15 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 let g:indentLine_char = '│'
 
 let g:UltiSnipsExpandTrigger="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 autocmd QuickFixCmdPost *grep* cwindow
 "
 " html completion "
 :iabbrev </ </<C-X><C-O>
 
-colorscheme mango
+colorscheme apprentice
 match Label /[A-Z]\{2,\}/ 
 
 set tags=tags;

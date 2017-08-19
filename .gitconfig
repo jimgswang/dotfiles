@@ -13,7 +13,8 @@
     br = branch
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -30
     d = diff
-    dt = difftool --dir-diff
+    dt = difftool -y
+    dts = difftool --dir-diff
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
 [user]

@@ -73,7 +73,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
-Plug 'unblevable/quick-scope'
+"Plug 'unblevable/quick-scope'
+Plug 'Leeiio/quick-scope'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -119,6 +120,8 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'flazz/vim-colorschemes'
 Plug 'romainl/apprentice'
 Plug 'w0ng/vim-hybrid'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 
@@ -216,7 +219,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 " html completion "
 :iabbrev </ </<C-X><C-O>
 
-colorscheme apprentice
+colorscheme onedark
 match Label /[A-Z]\{2,\}/ 
 
 set tags=tags;
@@ -230,3 +233,10 @@ ca Ags Ag! -Q
 
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+set termguicolors
+
+if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif

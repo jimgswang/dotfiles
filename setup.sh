@@ -27,7 +27,6 @@ ln -sb devenv/.bash_aliases .
 ln -sb devenv/.screenrc .
 ln -sb devenv/.tmux.conf .
 ln -sb devenv/.vimrc .
-ln -sb devenv/.jshintrc .
 ln -sb devenv/.gitconfig .
 ln -sb devenv/.ideavimrc .
 ln -sb devenv/.zshrc .

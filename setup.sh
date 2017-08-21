@@ -30,3 +30,4 @@ ln -sb devenv/.vimrc .
 ln -sb devenv/.gitconfig .
 ln -sb devenv/.ideavimrc .
 ln -sb devenv/.zshrc .
+ln -sb devenv/.tern-config .

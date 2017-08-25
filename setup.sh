@@ -11,7 +11,7 @@ sudo apt-get install -y curl
 # Install rlwrap
 sudo apt-get install -y rlwrap
 
-sudo apt-get install -y vim-gtk
+sudo apt-get install -y vim-gnome
 
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -22,12 +22,12 @@ npm install -g eslint
 
 # symlink the included dotfiles
 cd $HOME
-ln -sb devenv/.bashrc .
-ln -sb devenv/.bash_aliases .
-ln -sb devenv/.screenrc .
-ln -sb devenv/.tmux.conf .
-ln -sb devenv/.vimrc .
-ln -sb devenv/.gitconfig .
-ln -sb devenv/.ideavimrc .
-ln -sb devenv/.zshrc .
-ln -sb devenv/.tern-config .
+ln -sb dotfiles/.bashrc .
+ln -sb dotfiles/.bash_aliases .
+ln -sb dotfiles/.screenrc .
+ln -sb dotfiles/.tmux.conf .
+ln -sb dotfiles/.vimrc .
+ln -sb dotfiles/.gitconfig .
+ln -sb dotfiles/.ideavimrc .
+ln -sb dotfiles/.zshrc .
+ln -sb dotfiles/.tern-config .

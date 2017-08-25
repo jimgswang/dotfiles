@@ -73,6 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 "Plug 'unblevable/quick-scope'
 Plug 'Leeiio/quick-scope'
 Plug 'maxbrunsfeld/vim-yankstack'
@@ -240,3 +241,15 @@ if &term =~# '^screen'
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+
+" Change highlight cursor line for ctrlp
+let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
+
+function BrightHighlightOn()
+  hi CursorLine term=underline ctermbg=129 guibg=#781eff
+endfunction
+
+function BrightHighlightOff()
+  hi CursorLine term=underline ctermbg=236 guibg=#2C323B
+endfunction

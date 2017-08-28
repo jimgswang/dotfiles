@@ -23,6 +23,10 @@ set nu
 set relativenumber
 set so:5  " 5 line buffer on top/bottom of screen "
 
+" lowercase search
+set ignorecase
+set smartcase
+
 " Persistent undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups

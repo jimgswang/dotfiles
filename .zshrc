@@ -102,6 +102,8 @@ force_color_prompt=yes
 
 
 alias g='git'
+alias ts='tmux new -s'
+alias ta='tmux attach -t'
 
 # Ignore Control-S, Control-Q
 stty -ixon

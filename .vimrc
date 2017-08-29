@@ -246,7 +246,6 @@ if &term =~# '^screen'
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-
 " Change highlight cursor line for ctrlp
 let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
 
@@ -257,3 +256,7 @@ endfunction
 function BrightHighlightOff()
   hi CursorLine term=underline ctermbg=236 guibg=#2C323B
 endfunction
+
+silent !mkdir -p ~/.vim/swapfiles/
+" Move swapfiles to home folder
+set directory=~/.vim/swapfiles//

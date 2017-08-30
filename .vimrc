@@ -135,6 +135,16 @@ call plug#end()
 
 noremap <Leader>n :NERDTreeFocus<CR>
 
+" Add space after commenting
+let g:NERDSpaceDelims = 1
+
+
+" Cntrl-/ to toggle comment as intellij
+" Cntrl-/ is recognized as Cntrl-_  might break in other systems
+nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
+inoremap <C-_> :call NERDComment(0, "toggle")<CR>
+vnoremap <C-_> :call NERDComment(0, "toggle")<CR>
+
 " LustyJuggler "
 let g:LustyJugglerDefaultMappings = 0
 noremap <Leader>j :LustyJuggler<CR>
@@ -183,7 +193,7 @@ let g:syntastic_warning_symbol = '!'
 let g:syntastic_javascript_checkers=['eslint']
 "let g:syntastic_debug= 3
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='onedark'
 
 let g:javascript_plugin_jsdoc = 1
 

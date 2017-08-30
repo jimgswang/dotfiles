@@ -2,7 +2,7 @@ syntax on
 filetype plugin indent on
 
 " Tabs "
-set expandtab          
+set expandtab
 set softtabstop=4
 set nocindent smartindent
 set shiftwidth=4
@@ -26,6 +26,9 @@ set so:5  " 5 line buffer on top/bottom of screen "
 " lowercase search
 set ignorecase
 set smartcase
+
+" Auto read outside changes
+set autoread
 
 " Persistent undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -65,7 +68,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " let mapleader=" "
 map <space> <leader>
-set showcmd "show leader key at bottom corner " 
+set showcmd "show leader key at bottom corner "
 
 
 " Install plugins ""
@@ -99,6 +102,7 @@ Plug 'jimgswang/jsnippets'
 
 " Util
 Plug 'vim-scripts/SyntaxAttr.vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " JS/JSX
 Plug 'ternjs/tern_for_vim'
@@ -166,6 +170,7 @@ noremap <leader>gp :Gpush<CR>
 noremap <leader>x :lopen<CR>
 
 noremap <leader>sy :call SyntaxAttr()<CR>
+noremap <leader>sw :StripWhitespace<CR>
 
 " cntrlp mappings "
 
@@ -174,7 +179,7 @@ noremap <leader>e :CtrlPBuffer<CR>
 
 set wildignore+=*/dist/**
 set wildignore+=*/node_modules/**
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " Syntastic Settings "
 set statusline+=%#warningmsg#
@@ -235,7 +240,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 :iabbrev </ </<C-X><C-O>
 
 colorscheme onedark
-match Label /[A-Z]\{2,\}/ 
+match Label /[A-Z]\{2,\}/
 
 set tags=tags;
 

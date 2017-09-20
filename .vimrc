@@ -124,12 +124,9 @@ Plug 'junegunn/rainbow_parentheses.vim'
 
 " Themes / Colors
 Plug 'jimgswang/mango.vim'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'flazz/vim-colorschemes'
 Plug 'romainl/apprentice'
-Plug 'w0ng/vim-hybrid'
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()

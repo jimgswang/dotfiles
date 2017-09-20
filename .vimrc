@@ -48,6 +48,9 @@ onoremap ^ 0
 vmap < <gv
 vmap > >gv
 
+" gp to select recent changed text
+nnoremap gp `[v`]
+
 " Show hidden characters "
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 

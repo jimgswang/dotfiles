@@ -1,4 +1,4 @@
-dev-env
+dotfiles
 =======
 
 various setup / dotfiles

@@ -18,13 +18,13 @@
     unstage = reset HEAD
     uncommit = reset --soft HEAD^
 [user]
-	name = Jim Wang
-	email = jim.gs.wang@gmail.com
+    name = Jim Wang
+    email = jim.gs.wang@gmail.com
 [push]
-	default = simple
+    default = simple
 [core]
-	pager = less -erX
+    pager = less -erX
 [color]
-	ui = auto
+    ui = auto
 [diff]
-	tool = meld
+    tool = meld

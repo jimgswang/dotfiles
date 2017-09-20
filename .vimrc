@@ -81,7 +81,9 @@ set showcmd "show leader key at bottom corner "
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+"Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
@@ -118,7 +120,6 @@ Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vim-js-pretty-template'
-Plug 'mtscout6/syntastic-local-eslint.vim'
 
 "Plug 'othree/html5.vim'
 
@@ -185,21 +186,32 @@ set wildignore+=*/node_modules/**
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " Syntastic Settings "
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '!'
+
+" let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_debug= 3
+
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'javascript.jsx': ['eslint'],
+    \}
+
+" Always keep gutter for symbols open
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '!'
+nmap <silent> <C-k> <Plug>(ale_next_wrap)
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '!'
-
-let g:syntastic_javascript_checkers=['eslint']
-"let g:syntastic_debug= 3
 
 let g:airline_theme='onedark'
 

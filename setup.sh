@@ -22,8 +22,6 @@ npm install -g eslint
 
 # symlink the included dotfiles
 cd $HOME
-ln -sb dotfiles/.bashrc .
-ln -sb dotfiles/.bash_aliases .
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.tmux.conf .
 ln -sb dotfiles/.vimrc .

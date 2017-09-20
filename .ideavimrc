@@ -13,7 +13,7 @@ nnoremap <leader>f :action GotoFile<CR>
 nnoremap <leader>r :action Run<CR>
 nnoremap <leader>x :action GotoNextError<CR>
 nnoremap <leader>' :action ShowBookmarks<CR>
-nnoremap <leader>m :action ToggleBookmarkWithMnemonic<CR>`
+nnoremap <leader>m :action ToggleBookmarkWithMnemonic<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <leader>h :noh<CR>
@@ -21,7 +21,7 @@ nnoremap <leader>v <C-v>
 nnoremap <leader><S-x> :action GotoPreviousError<cr>
 nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
-nnoremap ZZ :action EditorSelectWord<CR> 
+nnoremap ZZ :action EditorSelectWord<CR>
 nnoremap 0 ^
 nnoremap ^ 0
 nnoremap \ :noh<CR>
@@ -32,10 +32,10 @@ nnoremap <leader>wf :action ToggleFullScreen<CR>
 nnoremap <leader>wd :action ToggleDistractionFreeMode<CR>
 
 " git / github
-nnoremap <leader>Gbr :action Github.Open.In.Browser<CR>
+nnoremap <leader>gbr :action Github.Open.In.Browser<CR>
 " First annotate clears line numbers, Second annotate shows git blame
-nnoremap <leader>Gann :action Annotate<CR> :action Annotate<CR>
-nnoremap <leader>Gpr :action Github.Create.Pull.Request<CR>
+nnoremap <leader>gann :action Annotate<CR> :action Annotate<CR>
+nnoremap <leader>gpr :action Github.Create.Pull.Request<CR>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>

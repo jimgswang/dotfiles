@@ -40,6 +40,8 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
+set ttyfast  " assume fast terminal"
+
 " Time to wait for mapped combos
 set timeoutlen=1000
 " Time to wait to key code
@@ -59,7 +61,8 @@ vmap < <gv
 vmap > >gv
 
 " gp to select recent changed text
-nnoremap gp `[v`]
+" Yankstack also uses gp
+nmap gp `[v`]
 
 " Show hidden characters "
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
@@ -112,6 +115,7 @@ Plug 'Leeiio/quick-scope'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/LustyJuggler'
 Plug 'Valloric/YouCompleteMe'

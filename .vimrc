@@ -21,7 +21,8 @@ set hlsearch  " highlight search
 
 set nu
 set relativenumber
-set so:5  " 5 line buffer on top/bottom of screen "
+set so:5  " 5 line buffer on top/bottom of screen
+set scrolljump=5 " scroll by 5 when scrolling offscreen
 
 " lowercase search
 set ignorecase
@@ -30,10 +31,18 @@ set smartcase
 " Auto read outside changes
 set autoread
 
+" Don't show N/I/V mode, let airline handle it
+set noshowmode
+
 " Persistent undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
+
+" Time to wait for mapped combos
+set timeoutlen=1000
+" Time to wait to key code
+set ttimeoutlen=10
 
 nmap j gj
 nmap k gk
@@ -61,9 +70,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-inoremap <C-space> <CR>
-cnoremap <C-space> <CR>
-nnoremap <C-space> <CR>
+
+" Control-space to alternate file
+nnoremap <C-@> <C-^>
+
+" w!! to save file as su
+cmap w!! w !sudo tee % > /dev/null
 
 set splitright
 set splitbelow
@@ -158,7 +170,7 @@ let g:LustyJugglerDefaultMappings = 0
 noremap <Leader>j :LustyJuggler<CR>
 
 " Set current working directory to the dir of the current file "
-autocmd BufEnter * silent! lcd %:p:h"
+" autocmd BufEnter * silent! lcd %:p:h"
 
 " Remove highlight of current search "
 noremap <leader>h :noh<CR>
@@ -214,6 +226,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
 
 let g:airline_theme='onedark'
+" config 3rd section of airline to show path of file, up to 30
+" see :help statusline
+let g:airline_section_c='%-00.30f'
 
 let g:javascript_plugin_jsdoc = 1
 

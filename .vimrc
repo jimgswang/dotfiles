@@ -11,6 +11,7 @@ set shiftwidth=4
 set laststatus=2
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 
 set virtualedit=block
 set background=dark
@@ -133,6 +134,10 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vim-js-pretty-template'
 
+" CSS
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+
 "Plug 'othree/html5.vim'
 
 " UI
@@ -214,13 +219,15 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'javascript.jsx': ['eslint'],
+    \ 'scss': ['stylelint'],
     \}
 
 " Always keep gutter for symbols open
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '!'
-nmap <silent> <C-k> <Plug>(ale_next_wrap)
+nmap ,e <Plug>(ale_next_wrap)
+nmap ,f <Plug>(ale_previous_wrap)
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
@@ -294,11 +301,11 @@ endif
 " Change highlight cursor line for ctrlp
 let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
 
-function BrightHighlightOn()
+function! BrightHighlightOn()
   hi CursorLine term=underline ctermbg=129 guibg=#781eff
 endfunction
 
-function BrightHighlightOff()
+function! BrightHighlightOff()
   hi CursorLine term=underline ctermbg=236 guibg=#2C323B
 endfunction
 

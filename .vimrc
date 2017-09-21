@@ -67,10 +67,15 @@ set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set title
 set ruler
 
+" Window Management
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Minize other windows instead of close
+nnoremap <C-W>o <C-W><Bar><C-W>_
+nnoremap <C-W>u <C-W>_
+nnoremap <C-W>m <C-W><Bar>
 
 " Control-space to alternate file
 nnoremap <C-@> <C-^>

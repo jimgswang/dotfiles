@@ -159,10 +159,10 @@ call plug#end()
 "call yankstack#setup()
 
 noremap <Leader>n :NERDTreeFocus<CR>
+let g:NERDTreeQuitOnOpen = 1
 
 " Add space after commenting
 let g:NERDSpaceDelims = 1
-
 
 " Cntrl-/ to toggle comment as intellij
 " Cntrl-/ is recognized as Cntrl-_  might break in other systems

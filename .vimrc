@@ -47,8 +47,8 @@ set timeoutlen=1000
 " Time to wait to key code
 set ttimeoutlen=10
 
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 "swap 0 and ^
 nnoremap 0 ^
 nnoremap ^ 0
@@ -59,6 +59,15 @@ onoremap ^ 0
 " Maintain visual mode after shifting
 vmap < <gv
 vmap > >gv
+
+nnoremap ; :
+nnoremap : <Nop>
+
+" Save with ;w in insert mode
+inoremap ;w <Esc>:update<Cr>
+
+" Go to end of line and append ; in insert mode
+inoremap ;a <Esc>A;
 
 " gp to select recent changed text
 " Yankstack also uses gp
@@ -95,8 +104,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " let mapleader=" "
 map <space> <leader>
-set showcmd "show leader key at bottom corner "
 
+" Reload vimrc
+nnoremap <leader>re :source ~/.vimrc<CR>
 
 " Install plugins ""
 call plug#begin('~/.vim/plugged')
@@ -110,8 +120,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-"Plug 'unblevable/quick-scope'
-Plug 'Leeiio/quick-scope'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -120,7 +128,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/LustyJuggler'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rking/ag.vim'
-Plug 'Chun-Yang/vim-action-ag'
 Plug 'godlygeek/tabular'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
@@ -129,6 +136,10 @@ Plug 'alvan/vim-closetag'
 Plug 'SirVer/ultisnips'
 Plug 'jimgswang/vim-snippets'
 Plug 'jimgswang/jsnippets'
+
+" Movement
+Plug 'rhysd/clever-f.vim'
+Plug 'Chun-Yang/vim-action-ag'
 
 " Util
 Plug 'vim-scripts/SyntaxAttr.vim'
@@ -157,6 +168,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 
 " Themes / Colors
 Plug 'jimgswang/mango.vim'
+Plug 'jimgswang/nord-vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'romainl/apprentice'
 Plug 'joshdick/onedark.vim'
@@ -164,8 +176,7 @@ Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 
-" conflicts with quickscope
-"call yankstack#setup()
+" call yankstack#setup()
 
 noremap <Leader>n :NERDTreeFocus<CR>
 let g:NERDTreeQuitOnOpen = 1
@@ -184,7 +195,7 @@ let g:LustyJugglerDefaultMappings = 0
 noremap <Leader>j :LustyJuggler<CR>
 
 " Set current working directory to the dir of the current file "
-" autocmd BufEnter * silent! lcd %:p:h"
+autocmd BufEnter * silent! lcd %:p:h"
 
 " Remove highlight of current search "
 noremap <leader>h :noh<CR>
@@ -201,6 +212,11 @@ noremap <leader>x :lopen<CR>
 
 noremap <leader>sy :call SyntaxAttr()<CR>
 noremap <leader>sw :StripWhitespace<CR>
+
+" clever-f, f always forward, F always back
+let g:clever_f_fix_key_direction = 1
+" Single line only
+let g:clever_f_across_no_line= 1
 
 " cntrlp mappings "
 
@@ -223,7 +239,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " let g:syntastic_warning_symbol = '!'
 
 " let g:syntastic_javascript_checkers=['eslint']
-"let g:syntastic_debug= 3
 
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
@@ -241,10 +256,11 @@ nmap ,f <Plug>(ale_previous_wrap)
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
 
-let g:airline_theme='onedark'
+let g:airline_theme='nord'
 " config 3rd section of airline to show path of file, up to 30
 " see :help statusline
-let g:airline_section_c='%-00.30f'
+let g:airline_section_c='%-00.30F'
+let g:airline#extentions#ale#enabled = 1
 
 let g:javascript_plugin_jsdoc = 1
 
@@ -258,9 +274,6 @@ let g:tmuxline_powerline_separators = 0
 let g:jsx_ext_required = 0
 
 let g:ag_working_path_mode = 'r'
-
-" Quickscope on f, F, t, T
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 let g:mta_filetypes = {
     \ 'html' : 1,
@@ -285,7 +298,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 " html completion "
 :iabbrev </ </<C-X><C-O>
 
-colorscheme onedark
+colorscheme nord
 match Label /[A-Z]\{2,\}/
 
 set tags=tags;

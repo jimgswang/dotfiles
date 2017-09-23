@@ -63,9 +63,15 @@ vmap > >gv
 nnoremap ; :
 nnoremap : <Nop>
 
-" Save with ;w in insert mode
-inoremap ;w <Esc>:update<Cr>
+" Same on the home row!
+inoremap <C-D> ()<Left>
+inoremap <C-F> {}<Left>
 
+" Save with C-S
+nnoremap <C-S> :update<Cr>
+inoremap <C-S> <Esc>:update<Cr>
+" OR Save with ;w in insert mode
+inoremap ;w <Esc>:update<Cr>
 " Go to end of line and append ; in insert mode
 inoremap ;a <Esc>A;
 
@@ -105,8 +111,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " let mapleader=" "
 map <space> <leader>
 
-" Reload vimrc
-nnoremap <leader>re :source ~/.vimrc<CR>
+" Edit and Reload vimrc. The only use for tabs
+nnoremap <leader>re :tabedit $MYVIMRC<CR>
+nnoremap <leader>rw :source $MYVIMRC<CR>
 
 " Install plugins ""
 call plug#begin('~/.vim/plugged')

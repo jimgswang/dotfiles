@@ -212,8 +212,12 @@ noremap <leader>h :noh<CR>
 noremap <leader>gs :Gstatus<CR>
 noremap <leader>gd :Gdiff<CR>
 noremap <leader>gb :Gblame<CR>
-noremap <leader>gl :Glog<CR>
+noremap <leader>gr :Gbrowse<CR>
+noremap <leader>gl :Glog<CR><CR>
 noremap <leader>gp :Gpush<CR>
+noremap <leader>ga :Gwrite :0<CR>
+noremap <leader>gmm :Gcommit<CR>
+noremap <leader>gmf :Gcommit --amend<CR>
 
 noremap <leader>x :lopen<CR>
 

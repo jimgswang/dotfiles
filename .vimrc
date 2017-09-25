@@ -143,6 +143,7 @@ Plug 'alvan/vim-closetag'
 Plug 'SirVer/ultisnips'
 Plug 'jimgswang/vim-snippets'
 Plug 'jimgswang/jsnippets'
+Plug 'maralla/completor.vim', { 'do': 'make js' }
 
 " Movement
 Plug 'rhysd/clever-f.vim'
@@ -215,7 +216,7 @@ noremap <leader>gb :Gblame<CR>
 noremap <leader>gr :Gbrowse<CR>
 noremap <leader>gl :Glog<CR><CR>
 noremap <leader>gp :Gpush<CR>
-noremap <leader>ga :Gwrite :0<CR>
+noremap <leader>ga :Git add -- .<CR><CR>
 noremap <leader>gmm :Gcommit<CR>
 noremap <leader>gmf :Gcommit --amend<CR>
 
@@ -261,8 +262,8 @@ let g:ale_linters = {
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '!'
-nmap ,e <Plug>(ale_next_wrap)
-nmap ,f <Plug>(ale_previous_wrap)
+nmap ,f <Plug>(ale_next_wrap)
+nmap ,e <Plug>(ale_previous_wrap)
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_root_markers = ['.ctrlp']
@@ -345,3 +346,8 @@ endfunction
 silent !mkdir -p ~/.vim/swapfiles/
 " Move swapfiles to home folder
 set directory=~/.vim/swapfiles//
+
+
+let g:loaded_youcompleteme = 1
+let g:completor_auto_trigger = 1
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

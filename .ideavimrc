@@ -1,47 +1,53 @@
 set ignorecase
 set smartcase
-set relativenumber
-set number
+" set relativenumber
+" set number
 set scrolloff=5
 set hlsearch
 set surround
 
 let mapleader = " "
+nnoremap ; :
+nnoremap 0 ^
+nnoremap ^ 0
+
 nnoremap <leader>c :action GotoClass<CR>
 nnoremap <leader>e :action RecentFiles<CR>
 nnoremap <leader>f :action GotoFile<CR>
 nnoremap <leader>r :action Run<CR>
-nnoremap <leader>x :action GotoNextError<CR>
 nnoremap <leader>' :action ShowBookmarks<CR>
 nnoremap <leader>m :action ToggleBookmarkWithMnemonic<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>v <C-v>
-nnoremap <leader><S-x> :action GotoPreviousError<cr>
-nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+nnoremap <leader>h :noh<CR>
+
 nnoremap ZZ :action EditorSelectWord<CR>
-nnoremap 0 ^
-nnoremap ^ 0
-nnoremap \ :noh<CR>
 nnoremap <leader>a :action FileStructurePopup<CR>
+
 " Window management
 nnoremap <leader>ww :action HideAllWindows<CR>
 nnoremap <leader>wf :action ToggleFullScreen<CR>
 nnoremap <leader>wd :action ToggleDistractionFreeMode<CR>
-
-" git / github
-nnoremap <leader>gbr :action Github.Open.In.Browser<CR>
-" First annotate clears line numbers, Second annotate shows git blame
-nnoremap <leader>gann :action Annotate<CR> :action Annotate<CR>
-nnoremap <leader>gpr :action Github.Create.Pull.Request<CR>
-
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
 
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 
+" git / github
+nnoremap <leader>gr :action Github.Open.In.Browser<CR>
+" First annotate clears line numbers, Second annotate shows git blame
+nnoremap <leader>ga :action Git.Add<CR>
+nnoremap <leader>gl :action Git.Log<CR>
+nnoremap <leader>gb :action Annotate<CR> :action Annotate<CR>
+nnoremap <leader>gpr :action Github.Create.Pull.Request<CR>
+
+nnoremap ,f :action GotoNextError<CR>
+nnoremap ,e :action GotoPreviousError<CR>
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap ;s <ESC>:action SaveDocument<CR>
+inoremap ;a <ESC>A;

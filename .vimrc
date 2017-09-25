@@ -1,6 +1,8 @@
 syntax on
 filetype plugin indent on
 
+set nocompatible
+
 " Tabs "
 set expandtab
 set softtabstop=4

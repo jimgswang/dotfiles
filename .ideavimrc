@@ -8,10 +8,15 @@ set surround
 
 let mapleader = " "
 nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 nnoremap 0 ^
 nnoremap ^ 0
+vnoremap 0 ^
+vnoremap ^ 0
 
-nnoremap <leader>c :action GotoClass<CR>
+nnoremap <leader>cc :action NewClass<CR>
 nnoremap <leader>e :action RecentFiles<CR>
 nnoremap <leader>f :action GotoFile<CR>
 nnoremap <leader>r :action Run<CR>
@@ -22,6 +27,11 @@ nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>v <C-v>
 nnoremap <leader>h :noh<CR>
+
+nnoremap <leader>ar :action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>ar :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>am :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action ExtractMethod<CR>
+nnoremap <leader>ai :action Generate<CR>
 
 nnoremap ZZ :action EditorSelectWord<CR>
 nnoremap <leader>a :action FileStructurePopup<CR>
@@ -49,5 +59,3 @@ nnoremap ,e :action GotoPreviousError<CR>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap ;s <ESC>:action SaveDocument<CR>
-inoremap ;a <ESC>A;

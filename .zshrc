@@ -111,6 +111,8 @@ stty -ixon
 path+=('/home/jim/Android/Sdk/platform-tools')
 export PATH
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246"
+export LS_COLORS=""
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

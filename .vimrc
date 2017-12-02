@@ -22,8 +22,8 @@ set t_Co=256
 set showcmd
 set hlsearch  " highlight search
 
-set nu
-set relativenumber
+set nonu
+set norelativenumber
 set so:5  " 5 line buffer on top/bottom of screen
 set scrolljump=5 " scroll by 5 when scrolling offscreen
 
@@ -146,6 +146,7 @@ Plug 'SirVer/ultisnips'
 Plug 'jimgswang/vim-snippets'
 Plug 'jimgswang/jsnippets'
 Plug 'maralla/completor.vim', { 'do': 'make js' }
+Plug 'tmhedberg/matchit'
 
 " Movement
 Plug 'rhysd/clever-f.vim'

@@ -1,7 +1,7 @@
 set ignorecase
 set smartcase
-" set relativenumber
-" set number
+set relativenumber
+set number
 set scrolloff=5
 set hlsearch
 set surround
@@ -40,6 +40,10 @@ nnoremap <leader>a :action FileStructurePopup<CR>
 nnoremap <leader>ww :action HideAllWindows<CR>
 nnoremap <leader>wf :action ToggleFullScreen<CR>
 nnoremap <leader>wd :action ToggleDistractionFreeMode<CR>
+
+" Select method when on first line
+nnoremap <leader>sm ^vf{%
+nnoremap <leader>sl `[v`]
 
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h

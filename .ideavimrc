@@ -27,6 +27,8 @@ nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <leader>h :noh<CR>
 nnoremap <leader>v <C-v>
 nnoremap <leader>h :noh<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 
 nnoremap <leader>ar :action Refactorings.QuickListPopupAction<CR>
 vnoremap <leader>ar :<bs><bs><bs><bs><bs>action VimVisualSwapSelections<CR>:action Refactorings.QuickListPopupAction<CR>

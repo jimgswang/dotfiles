@@ -55,6 +55,9 @@
 
 #source $ZSH/oh-my-zsh.sh
 
+# C-f to forward in history
+bindkey -M isearch '^f' history-incremental-search-forward
+
 source ~/antigen.zsh
 antigen use oh-my-zsh
 
@@ -65,6 +68,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 #antigen theme gnzh
 antigen theme avit
+#antigen theme refined
 
 antigen apply
 
@@ -100,20 +104,33 @@ force_color_prompt=yes
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+export ANDROID_HOME="/Users/jwang/Library/Android/sdk"
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:/usr/local/sbin
 
-alias g='git'
-alias ts='tmux new -s'
-alias ta='tmux attach -t'
+alias avd5="/Users/jwang/Library/Android/sdk/emulator/emulator -avd Nexus_5_API_26 -dns-server 8.8.8.8"
+alias avd5x="/Users/jwang/Library/Android/sdk/emulator/emulator -avd Nexus_5X_API_26 -dns-server 8.8.8.8"
+alias avd9="/Users/jwang/Library/Android/sdk/emulator/emulator -avd Nexus_9_API_26 -dns-server 8.8.8.8"
+alias pp="python -m json.tool"
+export SBT_CREDENTIALS=$HOME/.sbt/credentials
 
-# Ignore Control-S, Control-Q
-stty -ixon
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source ~/.profile
+export PAGERDUTY_WEB="/Users/jwang/dev/pagerduty/web"
 
-path+=('/home/jim/Android/Sdk/platform-tools')
-export PATH
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=246"
-export LS_COLORS=""
+##############################################################################
+# History Configuration
+# May need to give user permission to edit HISTFILE
+##############################################################################
+HISTSIZE=5000               #How many lines of history to keep in memory
+HISTFILE=~/.zsh_history     #Where to save history to disk
+SAVEHIST=5000               #Number of history entries to save to disk
+#HISTDUP=erase               #Erase duplicates in the history file
+setopt    appendhistory     #Append history to the history file (no overwriting)
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 
+. $HOME/.asdf/asdf.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. $HOME/.asdf/completions/asdf.bash
